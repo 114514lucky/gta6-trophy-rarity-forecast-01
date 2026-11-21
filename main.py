@@ -303,7 +303,7 @@ def fit_n_scenarios(reads, t_target_days, horizon_days):
     cap = n_last * 20.0
     out = []
     for scale, w in ((0.7, 0.25), (1.0, 0.5), (1.45, 0.25)):
-        out.append((min(base * scale, cap), w))
+        out.append((min(max(base * scale, n_last), cap), w))
     return out
 
 
